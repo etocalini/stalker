@@ -110,7 +110,7 @@ cat <<EOF
   If your OS/version/arch is not listed, installation ${RED}will fail${NORMAL}. More
   details about the systems supported by the script can be found here:
 
-    ${UNDERLINE}${CYAN}https://github.com/SlaSerX/stalker/blob/master/docs/os-suport${NORMAL}
+    ${UNDERLINE}${CYAN}https://github.com/etocalini/stalker/blob/master/docs/os-suport${NORMAL}
 
 
 EOF
@@ -129,11 +129,7 @@ fi
 # 
 
 pass="st@lk3r"
-<<<<<<< HEAD
 source="http://190.120.191.218/configs"
-=======
-#source="https://raw.githubusercontent.com/snake24564/stalker/master/docs/configs/"
-#>>>>>>> 645f9a3425c58bcbb5f69d245a4aa02d524f7179
 
 #Install Necessary services & packets
 sudo apt-get install -y -u apache2 nginx wget nano curl nginx-extras unzip memcached php5 php5-mysql php-pear nodejs upstart && sudo pear channel-discover pear.phing.info && sudo pear install -Z phing/phing 
@@ -143,7 +139,7 @@ pear install phing/phing
 sleep 1
 
 # Set the Server Timezone to CST
-#echo "Europe/Sofia" > /etc/timezone
+echo "Europe/Sofia" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
 # Install MySQL Server in a Non-Interactive mode. Default root password will be "st@lk3r"
@@ -161,7 +157,6 @@ wget http://190.120.191.218/v5.2.0.zip
 unzip v5.2.0.zip
 mv infomirgroup-stalker_portal-9e60f9025ab6 stalker_portal
 rm -rf *.zip
-rm -rf /var/www/html/__MACOSX
 
 mysql -uroot -p$pass -e "create database stalker_db"
 mysql -uroot -p$pass -e "GRANT ALL PRIVILEGES ON stalker_db.* TO stalker@localhost IDENTIFIED BY '1' WITH GRANT OPTION;"
@@ -183,10 +178,6 @@ wget $source/default
 /etc/init.d/nginx restart
 /etc/init.d/apache2 restart
 /etc/init.d/nginx restart
-
-cd /var/www/html/stalker_portal/server
-wget -O custom.ini http://190.120.191.218/configs/custom.ini
-cd
 
 cd /var/www/html/stalker_portal/deploy
 sudo phing
