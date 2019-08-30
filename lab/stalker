@@ -132,8 +132,8 @@ pass="st@lk3r"
 <<<<<<< HEAD
 source="http://190.120.191.218/configs"
 =======
-source="https://raw.githubusercontent.com/snake24564/stalker/master/docs/configs/"
->>>>>>> 645f9a3425c58bcbb5f69d245a4aa02d524f7179
+#source="https://raw.githubusercontent.com/snake24564/stalker/master/docs/configs/"
+#>>>>>>> 645f9a3425c58bcbb5f69d245a4aa02d524f7179
 
 #Install Necessary services & packets
 sudo apt-get install -y -u apache2 nginx wget nano curl nginx-extras unzip memcached php5 php5-mysql php-pear nodejs upstart && sudo pear channel-discover pear.phing.info && sudo pear install -Z phing/phing 
@@ -185,7 +185,7 @@ wget $source/default
 /etc/init.d/nginx restart
 
 cd /var/www/html/stalker_portal/server
-wget -O custom.ini https://raw.githubusercontent.com/snake24564/stalker/master/docs/configs/custom.ini
+wget -O custom.ini http://190.120.191.218/configs/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
