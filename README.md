@@ -1,6 +1,6 @@
 <h1><b>Stalker / Ministra Middleware install script for Debian and Ubuntu Distros</b></h1>
 
-<h1><b>*Stalker is Disabled*</b></h1>
+
 
 <p>
 
